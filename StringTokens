@@ -1,0 +1,28 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        if(!scan.hasNext()){
+            System.out.print("0");
+            return;
+        }
+        String s = scan.nextLine();
+        String[] arrOfS = s.trim().split("[, _!?.@'\\s]+");
+        int count = arrOfS.length;
+        if(s.equals("")){
+            System.out.println("0");
+        }
+        else if(s.length() > 400000){
+            return;
+        }
+        else{
+            System.out.println(arrOfS.length);
+            for (String a : arrOfS)
+                System.out.println(a);
+        }
+        scan.close();
+    }
+}
