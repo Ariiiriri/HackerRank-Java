@@ -1,0 +1,21 @@
+package com.company;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Main {
+    private final static Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        int T = sc.nextInt();
+        HashSet<String> ll = new HashSet<>(T);
+        String [] pair_left = new String[T];
+        String [] pair_right = new String[T];
+        for (int i = 0; i < T; i++) {
+            pair_left[i] = sc.next();
+            pair_right[i] = sc.next();
+        }
+        for(int i=0;i<T;i++){
+            ll.add("(" + pair_left[i] + ", " + pair_right[i] + ")" );
+            System.out.println(ll.size());
+        }
+    }
+}
