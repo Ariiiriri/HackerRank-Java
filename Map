@@ -1,0 +1,25 @@
+package com.company;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+    private final static Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        int n = sc.nextInt();
+        Map<String, Integer> phoneBook = new HashMap<>();
+        for(int i=0;i<n;i++) {
+            String name = sc.next();
+            sc.nextLine();
+            int number = sc.nextInt();
+            phoneBook.put(name, number);
+        }
+        while(sc.hasNext()) {
+            String s = sc.next();
+            if (phoneBook.containsKey(s))
+                System.out.print(s+" + "+phoneBook.get(s));
+            else
+                System.out.println("Not found");
+        }
+    }
+}
